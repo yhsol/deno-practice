@@ -6,7 +6,13 @@ type StoryT = {
   created_at_i: number;
 };
 
-export const mapStory = (sotry: StoryT) => ({
+type FormattedStory = {
+  title: string;
+  url: string;
+  createdAt: string;
+};
+
+export const mapStory = (sotry: StoryT): FormattedStory => ({
   title: sotry.title,
   url: sotry.url,
   createdAt: format(
